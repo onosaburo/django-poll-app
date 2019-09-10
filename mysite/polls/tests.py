@@ -3,6 +3,7 @@ import datetime
 from django.test import TestCase
 from django.utils import timezone
 from django.urls import reverse
+
 from .models import Question
 
 # Create your tests here.
@@ -92,6 +93,7 @@ class QuestionIndexViewTests(TestCase):
         )
 
 class QuestionDetailViewTests(TestCase):
+    
     def test_future_question(self):
         """
         The detail view of a question with a pub_date in the future
