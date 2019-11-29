@@ -6,7 +6,9 @@ from django.utils import timezone
 
 from .models import Question, Choice
 
+
 # Create your views here.
+
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -32,6 +34,7 @@ def vote(request, question_id):
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form.
+        # For Slack Test
         return render(request, 'polls/detail.html', {
             'question': question,
             'error_message':"You didn't select a choice.",
